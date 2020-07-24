@@ -1,0 +1,38 @@
+.playground {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    color: white;
+  }
+  
+  .header-name {
+    flex: 1;
+  }
+  
+  .header-name input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    text-overflow: ellipsis;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px;
+    margin-left: 5px;
+    border-bottom: 1px solid transparent;
+  }
+  
+  .header-name input:hover, .header-name input:focus {
+    border-bottom: 1px solid gray;
+    outline: none;
+  }
+  .header-name input:not(:focus) {
+    cursor: pointer;
+  }
+  
+  .header-coords {
+    user-select: none;
+  }
