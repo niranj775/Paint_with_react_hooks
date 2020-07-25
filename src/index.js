@@ -8,7 +8,8 @@ import Playground from "./Playground"
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Playground />
+    {/* <Playground /> */}
+    <Paint />
   </React.StrictMode>,
   document.getElementById('root')
 );
