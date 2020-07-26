@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Playground from "./Playground"
+import Paint from "./Paint";
 
 ReactDOM.render(
   <React.StrictMode>

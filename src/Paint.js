@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Name from './Name'
 import ColorPicker from './ColorPicker'
 import randomColor from 'randomcolor'
 
 export default function Paint() {
+  
+  
+  const [colors, setColors] = React.useState([]);
+  const [activeColor, setActiveColor] = React.useState(null)
+
+ 
   const getColors = () => {
     const baseColor = randomColor().slice(1);
     fetch(`https://www.thecolorapi.com/scheme?hex=${baseColor}&mode=monochrome`)
@@ -13,6 +19,11 @@ export default function Paint() {
       setActiveColor(res.colors[0].hex.value)
     })
   }
+
+  React.useEffect(() => {
+    getColors();
+  },[])
+
   return (
     <header style={{ borderTop: `10px solid ${activeColor}` }}>
       <div className="app">
@@ -21,7 +32,7 @@ export default function Paint() {
       <div style={{ marginTop: 10 }}>
         <ColorPicker
           colors={colors}
-          activeColor={activeColor}
+          currentColor={activeColor}
           setActiveColor={setActiveColor}
         />
       </div>
